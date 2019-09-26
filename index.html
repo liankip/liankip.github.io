@@ -16,15 +16,20 @@
 </head>
 
 <body>
-	<section class="section" id="app">
-		<div class="container">
-			<h1 class="title">
-				{{ message }}
-			</h1>
-			<p class="subtitle">
-				this My <strong>Portofolio</strong>!
-			</p>
-		</div>
+
+	<div id="app">
+		<!-- .hero -->
+		<section class="hero is-dark">
+			<div class="hero-body">
+				<div class="container">
+					<h1 class="title">Hello I'm <strong>Liandi Haikal</strong></h1>
+					<h2 class="subtitle">
+						this My <strong>Portofolio</strong>
+					</h2>
+				</div>
+			</div>
+		</section>
+		<!-- /.hero -->
 
 		<!-- .section -->
 		<div class="section">
@@ -49,7 +54,7 @@
 							</article>
 						</div>
 						<div class="tile is-parent">
-							<article class="tile is-child notification is-danger">
+							<article class="tile is-child notification is-primary">
 								<p class="title">Skills</p>
 								<p class="subtitle">Progress Skills</p>
 								<div v-for="skill in skills" class="content">
@@ -61,7 +66,7 @@
 						</div>
 					</div>
 					<div class="tile is-parent">
-						<article class="tile is-child notification is-primary">
+						<article class="tile is-child notification is-dark">
 							<div class="content">
 								<p class="title">Pendidikan</p>
 								<p v-for="collage in collages" class="subtitle">{{ collage.name }}</p>
@@ -69,7 +74,16 @@
 						</article>
 					</div>
 				</div>
+			</div>
+		</div>
+		<!-- /.section -->
 
+		<div class="section has-background-light">
+			<div class="container">
+				<h1 class="title">Project</h1>
+				<h2 class="subtitle">
+					This my <strong>4 Project on github and 1 Project Official</strong>
+				</h2>
 				<div class="columns is-multiline ">
 					<div v-for="project in projects" class="column is-one-third">
 						<article class="media notification has-background-white">
@@ -97,18 +111,16 @@
 				</div>
 			</div>
 		</div>
-		<!-- /.section -->
 
-	</section>
-
-	<footer class="footer">
-		<div class="content has-text-centered">
-			<p>
-				<strong>Portofolio</strong> by <a href="#">Liandi
-					Haikal</a>. The website Portofolio
-			</p>
-		</div>
-	</footer>
+		<footer class="footer">
+			<div class="content has-text-centered">
+				<p>
+					<strong>Portofolio</strong> by <a href="#">Liandi
+						Haikal</a>. The website Portofolio
+				</p>
+			</div>
+		</footer>
+	</div>
 
 	<script>
 		var app = new Vue({
