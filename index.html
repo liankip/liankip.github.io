@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Portofolio</title>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+        <script defer
+            src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    </head>
+    <body>
+        <section class="section" id="app">
+            <div class="container">
+                <h1 class="title">
+                    {{ message }}
+                </h1>
+                <p class="subtitle">
+                    this is my <strong>Portofolio</strong>!
+                </p>
+            </div>
+
+            <!-- .section -->
+            <div class="section">
+                <div class="container">
+                    <div class="tile is-ancestor">
+                        <div class="tile is-vertical is-8">
+
+                            <div v-for="data in datas" class="tile is-parent">
+                                <article class="tile
+                                    is-child notification
+                                    is-danger">
+                                    <p class="title">{{ data.name }}</p>
+                                    <p class="subtitle">{{ data.genre }}</p>
+                                    <div class="content">
+                                        <!-- Content -->
+                                        {{ data.description }}
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.section -->
+
+        </section>
+
+        <footer class="footer">
+            <div class="content has-text-centered">
+                <p>
+                    <strong>Blog</strong> by <a href="#">Liandi
+                        Haikal</a>. The website Project
+                </p>
+            </div>
+        </footer>
+
+        <script>
+            var app = new Vue({
+                    el: '#app',
+                    data: {
+                        message: 'Hello I\'am Liandi Haikal!',
+                        datas: []
+                    },
+                    mounted() {
+                        axios.get('https://my-json-server.typicode.com/liankip/blog-api/db').then(Response => this.datas = Response.data.blog);
+                    },
+                })
+        </script>
+    </body>
+</html>
