@@ -60,7 +60,6 @@
 								<div v-for="skill in skills" class="content">
 									{{ skill.name }}
 									<progress class="progress is-warning" :value="skill.rate" max="100"></progress>
-
 								</div>
 							</article>
 						</div>
@@ -69,7 +68,14 @@
 						<article class="tile is-child notification is-dark">
 							<div class="content">
 								<p class="title">Pendidikan</p>
-								<p v-for="collage in collages" class="subtitle">{{ collage.name }}</p>
+								<p v-for="collage in collages" class="subtitle">{{ collage.name }}.</p>
+							</div>
+							<div class="content">
+								<p class="title">Pekerjaan</p>
+								<p v-for="job in jobs" class="subtitle">
+									{{ job.id }}. {{ job.name }}
+									{{ job.desc }}.
+								</p>
 							</div>
 						</article>
 					</div>
@@ -89,7 +95,7 @@
 						<article class="media notification has-background-white">
 							<figure class="media-left">
 								<span class="icon has-text-danger">
-									<i class="fab fa-lg fa-wpforms"></i>
+									<i :class="project.icon"></i>
 								</span>
 							</figure>
 							<div class="media-content">
@@ -130,7 +136,8 @@
 				forms: [],
 				projects: [],
 				collages: [],
-				skills: []
+				skills: [],
+				jobs: []
 			},
 			mounted() {
 				axios.get('https://my-json-server.typicode.com/liankip/portofolio-api/form').then(Response =>
@@ -139,6 +146,8 @@
 					this.collages = Response.data);
 				axios.get('https://my-json-server.typicode.com/liankip/portofolio-api/skills').then(Response =>
 					this.skills = Response.data);
+				axios.get('https://my-json-server.typicode.com/liankip/portofolio-api/jobs').then(Response =>
+					this.jobs = Response.data);
 				axios.get('https://my-json-server.typicode.com/liankip/portofolio-api/project').then(Response =>
 					this.projects = Response.data);
 			},
