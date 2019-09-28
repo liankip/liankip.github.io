@@ -10,9 +10,9 @@
 	<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<!-- Development -->
-	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
 	<!-- Production -->
-	<!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
 
 <body>
@@ -22,6 +22,9 @@
 		<section class="hero is-dark">
 			<div class="hero-body">
 				<div class="container">
+					<figure class="image is-128x128">
+						<img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+					</figure>
 					<h1 class="title">Hello I'm <strong>Liandi Haikal</strong></h1>
 					<h2 class="subtitle">
 						this My <strong>Portofolio</strong>
@@ -48,7 +51,7 @@
 									<p class="subtitle">{{ form.religion }}</p>
 									<p class="subtitle">{{ form.status }}</p>
 									<p class="subtitle">{{ form.height }}</p>
-									<p class="subtitle">{{ form.phone }}</p>
+									<p class="subtitle">{{ form.phone }}</></p>
 									<p class="subtitle">{{ form.email }}</p>
 								</div>
 							</article>
@@ -68,14 +71,15 @@
 						<article class="tile is-child notification is-dark">
 							<div class="content">
 								<p class="title">Pendidikan</p>
-								<p v-for="collage in collages" class="subtitle">{{ collage.name }}.</p>
+								<p v-for="collage in collages" class="is-small">{{ collage.name }}.</p>
 							</div>
 							<div class="content">
 								<p class="title">Pekerjaan</p>
-								<p v-for="job in jobs" class="subtitle">
-									{{ job.id }}. {{ job.name }}
+								<div v-for="job in jobs" class="content">
+									<h5 class="subtitle is-5">{{ job.id }}. {{ job.name }}</h5>
+									<span class="tag is-white is-normal">{{ job.type }}</span>
 									{{ job.desc }}.
-								</p>
+								</div>
 							</div>
 						</article>
 					</div>
@@ -84,6 +88,7 @@
 		</div>
 		<!-- /.section -->
 
+		<!-- .Section -->
 		<div class="section has-background-light">
 			<div class="container">
 				<h1 class="title">Project</h1>
@@ -117,7 +122,9 @@
 				</div>
 			</div>
 		</div>
+		<!-- /.Section -->
 
+		<!-- .Footer -->
 		<footer class="footer">
 			<div class="content has-text-centered">
 				<p>
@@ -126,6 +133,7 @@
 				</p>
 			</div>
 		</footer>
+		<!-- /.Footer -->
 	</div>
 
 	<script>
