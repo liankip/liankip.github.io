@@ -125,26 +125,6 @@
 				mounted() {
 					axios
 						.get(
-							"https://my-json-server.typicode.com/liankip/portofolio-api/form"
-						)
-						.then((Response) => (this.forms = Response.data));
-					axios
-						.get(
-							"https://my-json-server.typicode.com/liankip/portofolio-api/collage"
-						)
-						.then((Response) => (this.collages = Response.data));
-					axios
-						.get(
-							"https://my-json-server.typicode.com/liankip/portofolio-api/skills"
-						)
-						.then((Response) => (this.skills = Response.data));
-					axios
-						.get(
-							"https://my-json-server.typicode.com/liankip/portofolio-api/jobs"
-						)
-						.then((Response) => (this.jobs = Response.data));
-					axios
-						.get(
 							"https://my-json-server.typicode.com/liankip/portofolio-api/project"
 						)
 						.then((Response) => (this.projects = Response.data));
