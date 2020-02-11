@@ -1,169 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Portofolio</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css"
+		/>
+		<script
+			defer
+			src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+		></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<!-- Development -->
+		<!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+		<!-- Production -->
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	</head>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Portofolio</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
-	<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-	<!-- Development -->
-	<!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
-	<!-- Production -->
-	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-</head>
+	<body>
+		<div id="app">
+			<!-- .hero -->
+			<section class="hero is-dark">
+				<div class="hero-body">
+					<div class="container">
+						<h1 class="title">Hello I'm <strong>Liandi Haikal</strong></h1>
+						<h2 class="subtitle">this My <strong>Portofolio</strong></h2>
+					</div>
+				</div>
+			</section>
+			<!-- /.hero -->
 
-<body>
-
-	<div id="app">
-		<!-- .hero -->
-		<section class="hero is-dark">
-			<div class="hero-body">
+			<!-- .Section -->
+			<div class="section has-background-light">
 				<div class="container">
-					<h1 class="title">Hello I'm <strong>Liandi Haikal</strong></h1>
+					<h1 class="title">Project</h1>
 					<h2 class="subtitle">
-						this My <strong>Portofolio</strong>
+						This my <strong>5 Project on github and 1 Project Official</strong>
 					</h2>
-				</div>
-			</div>
-		</section>
-		<!-- /.hero -->
-
-		<!-- .section -->
-		<div class="section">
-			<div class="container">
-				<div class="tile is-ancestor">
-					<div class="tile is-vertical is-8">
-						<div v-for="form in forms" class="tile is-parent">
-							<article class="tile
-                                    is-child notification
-                                    is-danger">
-								<p class="title">{{ form.name }}</p>
-								<p class="subtitle">{{ form.born }}</p>
-								<div class="content">
-									<p class="subtitle">{{ form.address }}</p>
-									<p class="subtitle">{{ form.sex }}</p>
-									<p class="subtitle">{{ form.religion }}</p>
-									<p class="subtitle">{{ form.status }}</p>
-									<p class="subtitle">{{ form.height }}</p>
-									<p class="subtitle">{{ form.phone }}</></p>
-									<p class="subtitle">{{ form.email }}</p>
-								</div>
-							</article>
-						</div>
-						<div class="tile is-parent">
-							<article class="tile is-child notification is-primary">
-								<p class="title">Skills</p>
-								<p class="subtitle">Progress Skills</p>
-								<div v-for="skill in skills" class="content">
-									{{ skill.name }}
-									<progress class="progress is-warning" :value="skill.rate" max="100"></progress>
+					<div class="columns is-multiline ">
+						<div v-for="project in projects" class="column is-one-third">
+							<article class="media notification has-background-white">
+								<figure class="media-left">
+									<span class="icon has-text-danger">
+										<i :class="project.icon"></i>
+									</span>
+								</figure>
+								<div class="media-content">
+									<div class="content">
+										<h1 class="title is-size-4">
+											{{project.name}}
+										</h1>
+										<p class="subtitle is-size-5">
+											{{ project.desc }}
+										</p>
+										<p class="subtitle is-size-5">
+											<a
+												class="button is-danger"
+												:href="project.link"
+												target="_blank"
+												>Lihat Disini</a
+											>
+										</p>
+									</div>
 								</div>
 							</article>
 						</div>
 					</div>
-					<div class="tile is-parent">
-						<article class="tile is-child notification is-dark">
-							<div class="content">
-								<p class="title">Pendidikan</p>
-								<p v-for="collage in collages" class="is-small">{{ collage.name }}.</p>
-							</div>
-							<div class="content">
-								<p class="title">Pekerjaan</p>
-								<div v-for="job in jobs" class="content">
-									<h5 class="subtitle is-5">{{ job.id }}. {{ job.name }}</h5>
-									<span class="tag is-white is-normal">{{ job.type }}</span>
-									{{ job.desc }}.
-								</div>
-							</div>
-						</article>
-					</div>
 				</div>
 			</div>
-		</div>
-		<!-- /.section -->
+			<!-- /.Section -->
 
-		<!-- .Section -->
-		<div class="section has-background-light">
-			<div class="container">
-				<h1 class="title">Project</h1>
-				<h2 class="subtitle">
-					This my <strong>5 Project on github and 1 Project Official</strong>
-				</h2>
-				<div class="columns is-multiline ">
-					<div v-for="project in projects" class="column is-one-third">
-						<article class="media notification has-background-white">
-							<figure class="media-left">
-								<span class="icon has-text-danger">
-									<i :class="project.icon"></i>
-								</span>
-							</figure>
-							<div class="media-content">
-								<div class="content">
-									<h1 class="title is-size-4">
-										{{project.name}}
-									</h1>
-									<p class="subtitle is-size-5">
-										{{ project.desc }}
-									</p>
-									<p class="subtitle is-size-5">
-										<a class="button is-danger" :href="project.link" target="_blank">Lihat
-											Disini</a>
-									</p>
-								</div>
-							</div>
-						</article>
-					</div>
+			<!-- .Footer -->
+			<footer class="footer">
+				<div class="content has-text-centered">
+					<p class="content">
+						<strong>Portofolio</strong> by
+						<a href="https://github.com/liankip">Liandi Haikal</a>.
+					</p>
+					<p>
+						<a
+							target="_blank"
+							class="button is-danger"
+							href="https://www.instagram.com/liandihaikal"
+							><i class="fab fa-instagram fa-2x"></i
+						></a>
+						<a
+							target="_blank"
+							class="button is-link"
+							href="https://www.facebook.com/liandi.haikal"
+							><i class="fab fa-facebook-f fa-2x"></i
+						></a>
+						<a
+							target="_blank"
+							class="button is-success"
+							href="https://wa.me/6282276366690"
+							><i class="fab fa-whatsapp fa-2x"></i
+						></a>
+						<a
+							target="_blank"
+							class="button is-info"
+							href="https://t.me/liandihaikal"
+							><i class="fab fa-telegram fa-2x"></i
+						></a>
+					</p>
 				</div>
-			</div>
+			</footer>
+			<!-- /.Footer -->
 		</div>
-		<!-- /.Section -->
 
-		<!-- .Footer -->
-		<footer class="footer">
-			<div class="content has-text-centered">
-				<p class="content">
-					<strong>Portofolio</strong> by <a href="https://github.com/liankip">Liandi
-						Haikal</a>. 
-				</p>
-				<p>
-					<a target="_blank" class="button is-danger" href="https://www.instagram.com/liandihaikal"><i class="fab fa-instagram fa-2x"></i></a>
-					<a target="_blank" class="button is-link" href="https://www.facebook.com/liandi.haikal"><i class="fab fa-facebook-f fa-2x"></i></a>
-					<a target="_blank" class="button is-success" href="https://wa.me/6282276366690"><i class="fab fa-whatsapp fa-2x"></i></a>
-					<a target="_blank" class="button is-info" href="https://t.me/liandihaikal"><i class="fab fa-telegram fa-2x"></i></a>
-				</p>
-			</div>
-		</footer>
-		<!-- /.Footer -->
-	</div>
-
-	<script>
-		var app = new Vue({
-			el: '#app',
-			data: {
-				message: 'Hello I\'am Liandi Haikal!',
-				forms: [],
-				projects: [],
-				collages: [],
-				skills: [],
-				jobs: []
-			},
-			mounted() {
-				axios.get('https://my-json-server.typicode.com/liankip/portofolio-api/form').then(Response =>
-					this.forms = Response.data);
-				axios.get('https://my-json-server.typicode.com/liankip/portofolio-api/collage').then(Response =>
-					this.collages = Response.data);
-				axios.get('https://my-json-server.typicode.com/liankip/portofolio-api/skills').then(Response =>
-					this.skills = Response.data);
-				axios.get('https://my-json-server.typicode.com/liankip/portofolio-api/jobs').then(Response =>
-					this.jobs = Response.data);
-				axios.get('https://my-json-server.typicode.com/liankip/portofolio-api/project').then(Response =>
-					this.projects = Response.data);
-			},
-		})
-	</script>
-</body>
-
+		<script>
+			var app = new Vue({
+				el: "#app",
+				data: {
+					message: "Hello I'am Liandi Haikal!",
+					forms: [],
+					projects: [],
+					collages: [],
+					skills: [],
+					jobs: []
+				},
+				mounted() {
+					axios
+						.get(
+							"https://my-json-server.typicode.com/liankip/portofolio-api/form"
+						)
+						.then((Response) => (this.forms = Response.data));
+					axios
+						.get(
+							"https://my-json-server.typicode.com/liankip/portofolio-api/collage"
+						)
+						.then((Response) => (this.collages = Response.data));
+					axios
+						.get(
+							"https://my-json-server.typicode.com/liankip/portofolio-api/skills"
+						)
+						.then((Response) => (this.skills = Response.data));
+					axios
+						.get(
+							"https://my-json-server.typicode.com/liankip/portofolio-api/jobs"
+						)
+						.then((Response) => (this.jobs = Response.data));
+					axios
+						.get(
+							"https://my-json-server.typicode.com/liankip/portofolio-api/project"
+						)
+						.then((Response) => (this.projects = Response.data));
+				}
+			});
+		</script>
+	</body>
 </html>
