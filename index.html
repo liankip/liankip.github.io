@@ -42,26 +42,27 @@
 				<div class="container">
 					<div class="columns is-multiline ">
 						<div v-for="project in projects" class="column is-one-third">
-							<article class="media notification has-background-white">
-								<figure class="media-left">
-									<span class="icon has-text-danger">
-										<i :class="project.icon"></i>
-									</span>
-								</figure>
+							<article class="media notification has-background-danger">
 								<div class="media-content">
 									<div class="content">
-										<h1 class="title is-size-4">
+										<h1 class="title has-text-white is-size-4">
 											{{project.name}}
 										</h1>
-										<p class="subtitle is-size-5">
+										<p class="subtitle has-text-white is-size-5">
 											{{ project.desc }}
 										</p>
 										<p class="subtitle is-size-5">
 											<a
-												class="button is-danger"
+												class="button is-white has-text-danger"
 												:href="project.link"
 												target="_blank"
-												>Lihat Disini</a
+												>Github</a
+											>
+											<a v-if="project.demo != ''"
+												class="button is-white has-text-danger"
+												:href="project.demo"
+												target="_blank"
+												>Demo</a
 											>
 										</p>
 									</div>
@@ -76,15 +77,11 @@
 			<!-- .Footer -->
 			<footer class="footer">
 				<div class="content has-text-centered">
-					<p class="content">
-						<strong>Portofolio</strong> by
-						<a href="https://github.com/liankip">Liandi Haikal</a>.
-					</p>
 					<p>
 						<a
 							target="_blank"
 							class="button is-danger"
-							href="https://www.instagram.com/liandihaikal"
+							href="https://www.instagram.com/yrugmst"
 							><i class="fab fa-instagram fa-2x"></i
 						></a>
 						<a
@@ -96,15 +93,19 @@
 						<a
 							target="_blank"
 							class="button is-success"
-							href="https://wa.me/6282276366690"
+							href="https://wa.me/6281267582824?text=Halo%20liandi%20haikal%20saya%20menyukai%20portofoliomu"
 							><i class="fab fa-whatsapp fa-2x"></i
 						></a>
 						<a
 							target="_blank"
 							class="button is-info"
-							href="https://t.me/liandihaikal"
+							href="https://t.me/liandi_haikal"
 							><i class="fab fa-telegram fa-2x"></i
 						></a>
+					</p>
+					<p class="content">
+						<strong>©{{ date }} Portofolio</strong>
+						<a class="has-text-danger" href="https://github.com/liankip">Liandi Haikal</a> .
 					</p>
 				</div>
 			</footer>
@@ -115,6 +116,7 @@
 			var app = new Vue({
 				el: "#app",
 				data: {
+					date: new Date().getFullYear(),
 					projects: []
 				},
 				mounted() {
