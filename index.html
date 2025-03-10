@@ -10,97 +10,99 @@
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
-
+    
 </head>
 
 <body>
-<div id="app">
-    <section class="hero" style="margin-bottom: -80px">
-        <div class="hero-body">
-            <div class="container">
-                <h1 class="title">
-                    Hello I'm <strong class="has-text-primary">Liandi Haikal</strong>
-                </h1>
-                <h2 class="subtitle">
-                    <strong>Full-Stack Developer, Web Developer</strong>
-                </h2>
-                <div class="content">
-                    <a target="_blank" class="button is-danger has-text-white"
-                       href="https://www.instagram.com/yrugmst"><i
-                            class="fab fa-instagram"></i></a>
-                    <a target="_blank" class="button is-link " href="https://www.facebook.com/liandi.haikal"><i
+    <div id="app">
+        <section class="hero" style="margin-bottom: -80px">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title">
+                        Hello I'm <strong class="has-text-primary">Liandi Haikal</strong>
+                    </h1>
+                    <h2 class="subtitle">
+                        <strong>Full-Stack Developer, Web Developer</strong>
+                    </h2>
+                    <div class="content">
+                        <a target="_blank" class="button is-danger has-text-white"
+                        href="https://www.instagram.com/yrugmst"><i
+                        class="fab fa-instagram"></i></a>
+                        <a target="_blank" class="button is-link " href="https://www.facebook.com/liandi.haikal"><i
                             class="fab fa-facebook-f"></i></a>
-                    <a target="_blank" class="button is-success has-text-white"
-                       href="https://wa.me/6281267582824?text=Halo%20liandi%20haikal%20saya%20menyukai%20portofoliomu"><i
+                            <a target="_blank" class="button is-success has-text-white"
+                            href="https://wa.me/6281267582824?text=Halo%20liandi%20haikal%20saya%20menyukai%20portofoliomu"><i
                             class="fab fa-whatsapp"></i></a>
-                    <a target="_blank" class="button is-info has-text-white" href="https://t.me/liandi_haikal"><i
-                            class="fab fa-telegram"></i></a>
-                </div>
-                <p class="subtitle" style="  text-align: justify;  text-justify: inter-word;">
-                    Working in the IT industry for over 7 years, I have been seeking a challenging role where I can utilize my skills to contribute to the success of a growing company and successfully implement various IT projects, including ERP, system upgrades, migration of legacy systems to new versions. In my last role as Golang Developer at a cryptocurrency technology company, I was highly motivated and experienced with a proven track record of built and implemented REST API Microservices using Golang, Swagger, and OneSignal, resulting in a 15% increase in system efficiency.
-                </p>
-            </div>
-        </div>
-    </section>
-    <!-- /.hero -->
-
-    <!-- .Section -->
-    <div class="section">
-        <div class="container">
-            <div class="columns is-multiline ">
-                <div v-for="project in projects" class="column is-one-third">
-                    <article class="media notification has-background-primary has-text-primary-50-invert">
-                        <div class="media-content">
-                            <div class="content">
-                                <h1 class="title has-text-white is-size-4">
-                                    {{project.name}}
-                                </h1>
-                                <p class="subtitle has-text-white is-size-5">
-                                    {{ project.desc }}
-                                </p>
-                                <p class="subtitle is-size-5 ">
-                                <div class="buttons is-right">
-                                    <a class="button is-white has-text-primary" :href="project.link" target="_blank">
-                                        <i class="fab fa-github"></i>
-                                        <p style="padding: 2px">Github</p></a>
-                                    <a v-if="project.demo !== ''" class="button is-white has-text-primary"
-                                       :href="project.demo" target="_blank">
-                                        <p style="padding: 2px">Demo</p>
-                                    </a>
-                                </div>
-                                </p>
+                            <a target="_blank" class="button is-info has-text-white" href="https://t.me/liandi_haikal"><i
+                                class="fab fa-telegram"></i></a>
+                            </div>
+                            <p class="subtitle" style="  text-align: justify;  text-justify: inter-word;">
+                                orking in the IT industry for over 7 years, I have been seeking a challenging role where I can
+                                utilize my skills to contribute to the success of a growing company and successfully implement
+                                various IT projects, including ERP, system upgrades, migration of legacy systems to new versions.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <!-- /.hero -->
+                
+                <!-- .Section -->
+                <div class="section">
+                    <div class="container">
+                        <div class="columns is-multiline ">
+                            <div v-for="project in projects" class="column is-one-third">
+                                <article class="media notification has-background-primary has-text-primary-50-invert">
+                                    <div class="media-content">
+                                        <div class="content">
+                                            <h1 class="title has-text-white is-size-4">
+                                                {{project.name}}
+                                            </h1>
+                                            <p class="subtitle has-text-white is-size-5">
+                                                {{ project.desc }}
+                                            </p>
+                                            <p class="subtitle is-size-5 ">
+                                                <div class="buttons is-right">
+                                                    <a class="button is-white has-text-primary" :href="project.link" target="_blank">
+                                                        <i class="fab fa-github"></i>
+                                                        <p style="padding: 2px">Github</p></a>
+                                                        <a v-if="project.demo !== ''" class="button is-white has-text-primary"
+                                                        :href="project.demo" target="_blank">
+                                                        <p style="padding: 2px">Demo</p>
+                                                    </a>
+                                                </div>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </article>
                             </div>
                         </div>
-                    </article>
+                    </div>
                 </div>
+                
+                <footer class="footer">
+                    <div class="content has-text-centered">
+                        <strong>©{{ date }} Portofolio</strong>
+                        <a class="has-text-primary" href="https://github.com/liankip">Liandi Haikal</a> .
+                    </div>
+                </footer>
             </div>
-        </div>
-    </div>
-    
-    <footer class="footer">
-        <div class="content has-text-centered">
-            <strong>©{{ date }} Portofolio</strong>
-            <a class="has-text-primary" href="https://github.com/liankip">Liandi Haikal</a> .
-        </div>
-    </footer>
-</div>
-
-<script>
-    var app = new Vue({
-        el: "#app",
-        data: {
-            date: new Date().getFullYear(),
-            projects: []
-        },
-        mounted() {
-            axios
-                .get(
-                    "https://my-json-server.typicode.com/liankip/portofolio-api/project"
-                )
-                .then((Response) => (this.projects = Response.data));
-        }
-    });
-</script>
-</body>
-
-</html>
+            
+            <script>
+                var app = new Vue({
+                    el: "#app",
+                    data: {
+                        date: new Date().getFullYear(),
+                        projects: []
+                    },
+                    mounted() {
+                        axios
+                        .get(
+                        "https://my-json-server.typicode.com/liankip/portofolio-api/project"
+                        )
+                        .then((Response) => (this.projects = Response.data));
+                    }
+                });
+            </script>
+        </body>
+        
+        </html>
